@@ -40,4 +40,16 @@ OK 00_hello_http.spectra (1541 bytes)
 
 ## Deploy status
 
-NOT DEPLOYED — awaiting user decision on GitHub repo and Vercel project (see PLAN.md "Decisions to confirm with user").
+DEPLOYED — production live at https://spectralang.vercel.app (2026-08-03).
+
+| Check | Result |
+|---|---|
+| Vercel production build | PASS — status Ready, target production |
+| Production URL | PASS — HTTP 200 |
+| Title | PASS — "SpectraLang - AI/ML language and API platform" |
+| Version badge v0.2.7 | PASS — rendered in Nav |
+| OG url | PASS — points to https://spectralang.vercel.app |
+| Status badge | PASS — "[ active development - not yet a stable production language ]" |
+| GitHub repo | https://github.com/hyskasoftware/spectralang-site (branch master) |
+
+Note: deployment was made via Vercel CLI (project `spectralang`, team hyskas-projects). Git integration for auto-deploy on push can be connected from the Vercel dashboard: project spectralang → Settings → Git.
