@@ -9,16 +9,21 @@
 | Production server HTTP 200 | PASS — `http://localhost:3777` returns 200, title/meta/OG present | local prod server |
 | Desktop screenshot 1440px | captured | `desktop-1440.png` |
 | Mobile screenshot 390px | captured | `mobile-390.png` |
-| Byte-identical samples | PASS (3/3) | `verify-samples.js` run (see below) |
+| Byte-identical samples | PASS (6/6) | `verify-samples.js` run (see below) |
 | Logo asset hash | PASS — SHA-256 identical to repo source | `assets/logo spectra.svg` == `public/logo.svg` |
 
 ## verify-samples.js output
 
 ```
 OK syntax_quickstart.spectra (468 bytes)
+OK basic.spectra (857 bytes)
+OK fibonacci.spectra (1580 bytes)
+OK traits_demo.spectra (3644 bytes)
 OK tensor_graph_elementwise_fusion.spectra (656 bytes)
 OK 00_hello_http.spectra (1541 bytes)
 ```
+
+Note: SECTION 02 — SOURCE expanded from 3 to 6 tabs (2026-08-03, user request): added `basic`, `fibonacci`, `traits_demo` (traits/records demo) alongside quickstart, AI/ML tensor graph, and API hello_http. All verbatim, script-verified.
 
 ## Fact checklist (all must pass)
 
@@ -27,7 +32,7 @@ OK 00_hello_http.spectra (1541 bytes)
 - [x] AI/ML claims ⊆ README "AI/ML core" section — all 6 points trace to README Key Features.
 - [x] API claims ⊆ README "API Platform" section — all 6 points trace to README Key Features.
 - [x] CLI commands ⊆ README "CLI Essentials" — all 10 rows verbatim from README table.
-- [x] Code samples byte-identical to source `examples/*.spectra` — verified via script (3/3 OK).
+- [x] Code samples byte-identical to source `examples/*.spectra` — verified via script (6/6 OK).
 - [x] Install instructions match README Installation section — 4 steps verbatim; no invented `cargo install spectralang`.
 - [x] Logo assets byte-identical to `D:\Lang\SpectraLang\assets\` — hash-checked.
 - [x] Purple palette values trace to logo SVG fills (`#7d4fcd`, `#7e50ce`) — used as `--purple`/`--purple-2` tokens.
