@@ -1,6 +1,6 @@
 import { site } from "./site";
 
-export const SITE_URL = "https://spectralang.org";
+export const SITE_URL = "https://www.spectralang.org";
 export const SITE_NAME = "SpectraLang";
 
 export const KEYWORDS = [

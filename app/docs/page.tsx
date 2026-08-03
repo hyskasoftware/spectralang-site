@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "SpectraLang Docs",
     description:
       "Complete SpectraLang documentation: language reference, CLI reference, installation and usage.",
-    url: "https://spectralang.org/docs",
+    url: "https://www.spectralang.org/docs",
   },
 };
 

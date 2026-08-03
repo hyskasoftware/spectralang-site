@@ -90,7 +90,7 @@ export default async function OpengraphImage() {
         >
           <span>OPEN SOURCE</span>
           <span>MIT LICENSE</span>
-          <span>spectralang.org</span>
+          <span>www.spectralang.org</span>
         </div>
       </div>
     ),

@@ -32,7 +32,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://spectralang.org/sitemap.xml",
-    host: "https://spectralang.org",
+    sitemap: "https://www.spectralang.org/sitemap.xml",
+    host: "https://www.spectralang.org",
   };
 }
