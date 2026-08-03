@@ -6,6 +6,9 @@ const samples = [...siteTs.matchAll(/code: `([\s\S]*?)`/g)].map((m) => m[1]);
 
 const targets = [
   ["syntax_quickstart.spectra", "syntax_quickstart.spectra"],
+  ["basic.spectra", "basic.spectra"],
+  ["fibonacci.spectra", "fibonacci.spectra"],
+  ["traits_demo.spectra", "traits_demo.spectra"],
   ["ai/tensor_graph_elementwise_fusion.spectra", "tensor_graph_elementwise_fusion.spectra"],
   ["api/00_hello_http.spectra", "00_hello_http.spectra"],
 ];
