@@ -80,7 +80,7 @@ export const codeSamples = {
     code: `module syntax_quickstart
 from std.io import println
 func welcome(name: string) returns string {
-    return f"Ola, {name}!"
+    return f"Hello, {name}!"
 }
 public func main() returns int {
     let name    = "SpectraLang"
@@ -91,9 +91,9 @@ public func main() returns int {
         total = total + item
     }
     if total > 5 and not total == 0 {
-        println("sintaxe clara")
+        println("clear syntax")
     } else {
-        println("continue explorando")
+        println("keep exploring")
     }
     return 0
 }`,
@@ -102,8 +102,8 @@ public func main() returns int {
     label: "basic.spectra",
     title: "Basic",
     file: "examples/basic.spectra",
-    code: `// SpectraLang - Exemplo Básico
-// Sintaxe simples e funcional
+    code: `// SpectraLang - Basic Example
+// Simple and functional syntax
 
 module basic
 
@@ -151,8 +151,8 @@ func calculate(x: int, y: int, z: int) returns int {
     label: "fibonacci.spectra",
     title: "Fibonacci",
     file: "examples/fibonacci.spectra",
-    code: `// SpectraLang - Exemplo: Fibonacci
-// Demonstra loops, recursão e sintaxe limpa
+    code: `// SpectraLang - Example: Fibonacci
+// Demonstrates loops, recursion, and clean syntax
 
 module fibonacci
 import std.io
@@ -160,19 +160,19 @@ import std.io
 public func main() {
     println("=== Fibonacci Sequence ===")
 
-    // Fibonacci iterativo
+    // Iterative Fibonacci
     println("Iterative approach:")
     let fib_iter = fibonacci_iterative(10)
     println(fib_iter)
 
-    // Fibonacci com loop for
+    // Fibonacci with a for loop
     println("First 10 Fibonacci numbers:")
     print_fibonacci_sequence(10)
 
     return
 }
 
-// Versão iterativa (mais eficiente)
+// Iterative version (more efficient)
 func fibonacci_iterative(n: int) returns int {
     if n <= 1 {
         return n
@@ -192,7 +192,7 @@ func fibonacci_iterative(n: int) returns int {
     return curr
 }
 
-// Imprime sequência
+// Prints the sequence
 func print_fibonacci_sequence(count: int) {
     let i = 0
 
@@ -205,7 +205,7 @@ func print_fibonacci_sequence(count: int) {
     return
 }
 
-// Verifica se número está na sequência de Fibonacci
+// Checks if a number is in the Fibonacci sequence
 func is_fibonacci(num: int) returns bool {
     if num < 0 {
         return false
@@ -232,7 +232,7 @@ func is_fibonacci(num: int) returns bool {
     return false
 }
 
-// Soma dos N primeiros números de Fibonacci
+// Sum of the first N Fibonacci numbers
 func sum_fibonacci(n: int) returns int {
     let sum = 0
     let i   = 0
@@ -250,11 +250,11 @@ func sum_fibonacci(n: int) returns int {
     label: "traits_demo.spectra",
     title: "Traits",
     file: "examples/traits_demo.spectra",
-    code: `// Demonstração completa do sistema de Traits do SpectraLang
+    code: `// Complete demonstration of SpectraLang's Traits system
 module traits_demo
 
 // ============================================
-// 1. TRAIT BÁSICO - Interface para impressão
+// 1. BASIC TRAIT - Interface for printing
 // ============================================
 
 trait Printable {
@@ -263,7 +263,7 @@ trait Printable {
 }
 
 // ============================================
-// 2. TRAIT PARA OPERAÇÕES MATEMÁTICAS
+// 2. TRAIT FOR MATH OPERATIONS
 // ============================================
 
 trait Calculable {
@@ -273,7 +273,7 @@ trait Calculable {
 }
 
 // ============================================
-// 3. STRUCTS QUE IMPLEMENTAM TRAITS
+// 3. STRUCTS THAT IMPLEMENT TRAITS
 // ============================================
 
 record Point {
@@ -286,31 +286,31 @@ record Calculator {
 }
 
 // ============================================
-// 4. IMPLEMENTAÇÕES
+// 4. IMPLEMENTATIONS
 // ============================================
 
-// Point implementa Printable
+// Point implements Printable
 impl Printable for Point {
     func to_string( & self) returns int {
-        // Retorna soma das coordenadas (simulação)
+        // Returns the sum of the coordinates (simulation)
         self.x + self.y
     }
 
     func debug( & self) returns int {
-        // Retorna produto das coordenadas
+        // Returns the product of the coordinates
         self.x * self.y
     }
 }
 
-// Calculator implementa Calculable
+// Calculator implements Calculable
 impl Calculable for Calculator {
     func add( & self, x: int, y: int) returns int {
-        // Soma com valor base
+        // Adds the base value
         self.base + x + y
     }
 
     func multiply( & self, x: int, y: int) returns int {
-        // Multiplica com valor base
+        // Multiplies by the base value
         self.base * x * y
     }
 
@@ -319,7 +319,7 @@ impl Calculable for Calculator {
     }
 }
 
-// Calculator também implementa Printable
+// Calculator also implements Printable
 impl Printable for Calculator {
     func to_string( & self) returns int {
         self.base
@@ -331,7 +331,7 @@ impl Printable for Calculator {
 }
 
 // ============================================
-// 5. MÚLTIPLOS TRAITS NO MESMO TIPO
+// 5. MULTIPLE TRAITS ON THE SAME TYPE
 // ============================================
 
 record MultiTrait {
@@ -363,18 +363,18 @@ impl Calculable for MultiTrait {
 }
 
 // ============================================
-// 6. FUNÇÃO PRINCIPAL - DEMONSTRAÇÃO
+// 6. MAIN FUNCTION - DEMONSTRATION
 // ============================================
 
 func main() returns int {
-    // Teste 1: Point com Printable
+    // Test 1: Point with Printable
     let p        = Point { x: 10, y: 20 }
     let p_string = p.to_string()
     // 30 (10 + 20)
     let p_debug = p.debug()
     // 200 (10 * 20)
 
-    // Teste 2: Calculator com ambos traits
+    // Test 2: Calculator with both traits
     let calc     = Calculator { base: 5 }
     let calc_add = calc.add(3, 7)
     // 15 (5 + 3 + 7)
@@ -385,7 +385,7 @@ func main() returns int {
     let calc_dbg = calc.debug()
     // 50 (5 * 10)
 
-    // Teste 3: MultiTrait com múltiplos traits
+    // Test 3: MultiTrait with multiple traits
     let multi     = MultiTrait { value: 3 }
     let multi_str = multi.to_string()
     // 3
@@ -396,7 +396,7 @@ func main() returns int {
     let multi_mul = multi.multiply(2, 5)
     // 30 (3 * 2 * 5)
 
-    // Resultado: soma de todos os testes
+    // Result: sum of all tests
     // 30 + 200 + 15 + 40 + 5 + 50 + 3 + 6 + 33 + 30 = 412
     p_string + p_debug + calc_add + calc_mul + calc_str + calc_dbg +
     multi_str + multi_dbg + multi_add + multi_mul

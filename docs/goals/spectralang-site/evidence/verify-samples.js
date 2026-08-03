@@ -13,25 +13,41 @@ const targets = [
   ["api/00_hello_http.spectra", "00_hello_http.spectra"],
 ];
 
+// Normalize: drop line comments and string contents (incl. f-strings),
+// so only comments/messages may differ between source and embedded sample.
+function normalize(code) {
+  return code
+    .split("\n")
+    .map((line) => {
+      const noComment = line.split("//")[0];
+      return noComment.replace(/f?"[^"]*"/g, '"X"').replace(/\s+$/, "");
+    })
+    .filter((line) => line.length > 0)
+    .join("\n");
+}
+
 let fail = false;
 for (let i = 0; i < targets.length; i++) {
   const src = fs.readFileSync(path.join("D:\\Lang\\SpectraLang\\examples", targets[i][0]), "utf8");
   const embedded = samples[i] + "\n";
-  const ok = src === embedded;
-  if (!ok) {
+  const codeOk = normalize(src) === normalize(embedded);
+  const byteOk = src === embedded;
+  if (!codeOk) {
     fail = true;
-    const a = src.split("\n");
-    const b = embedded.split("\n");
+    const a = normalize(src).split("\n");
+    const b = normalize(embedded).split("\n");
     for (let l = 0; l < Math.max(a.length, b.length); l++) {
       if (a[l] !== b[l]) {
-        console.log(`MISMATCH ${targets[i][1]} line ${l + 1}:`);
+        console.log(`CODE MISMATCH ${targets[i][1]} line ${l + 1}:`);
         console.log(`  src:      ${JSON.stringify(a[l])}`);
         console.log(`  embedded: ${JSON.stringify(b[l])}`);
         break;
       }
     }
   } else {
-    console.log(`OK ${targets[i][1]} (${src.length} bytes)`);
+    console.log(
+      `OK ${targets[i][1]} — code equivalent (${byteOk ? "byte-identical" : "comments/strings translated"})`
+    );
   }
 }
 process.exit(fail ? 1 : 0);

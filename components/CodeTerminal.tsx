@@ -19,10 +19,11 @@ export function CodeTerminal() {
       <div className="mx-auto max-w-6xl px-4 py-20">
         <p className="text-[10px] tracking-[0.35em] text-muted">{"// SECTION 02 — SOURCE"}</p>
         <h2 className="mt-3 text-2xl font-black tracking-tight text-text md:text-4xl">
-          REAL CODE,<span className="text-purple-bright glow-purple">_VERBATIM</span>
+          REAL CODE,<span className="text-purple-bright glow-purple">_TRANSLATED</span>
         </h2>
         <p className="mt-2 max-w-xl text-sm text-muted">
-          Bundled examples straight from the repository — no sugar-coating, no rewrites.
+          Bundled examples straight from the repository — comments translated to English, code
+          untouched.
         </p>
 
         <div className="ascii-box mt-12 overflow-hidden bg-bg">
@@ -92,7 +93,8 @@ export function CodeTerminal() {
         </div>
 
         <p className="mt-4 text-[10px] tracking-widest text-muted">
-          * samples are byte-identical to bundled examples in the {site.repo} repository
+          * comments and messages translated to English for clarity — the code itself is unchanged
+          from the bundled examples in the {site.repo} repository
         </p>
       </div>
     </section>

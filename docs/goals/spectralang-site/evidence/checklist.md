@@ -15,15 +15,17 @@
 ## verify-samples.js output
 
 ```
-OK syntax_quickstart.spectra (468 bytes)
-OK basic.spectra (857 bytes)
-OK fibonacci.spectra (1580 bytes)
-OK traits_demo.spectra (3644 bytes)
-OK tensor_graph_elementwise_fusion.spectra (656 bytes)
-OK 00_hello_http.spectra (1541 bytes)
+OK syntax_quickstart.spectra — code equivalent (comments/strings translated)
+OK basic.spectra — code equivalent (comments/strings translated)
+OK fibonacci.spectra — code equivalent (comments/strings translated)
+OK traits_demo.spectra — code equivalent (comments/strings translated)
+OK tensor_graph_elementwise_fusion.spectra — code equivalent (byte-identical)
+OK 00_hello_http.spectra — code equivalent (byte-identical)
 ```
 
-Note: SECTION 02 — SOURCE expanded from 3 to 6 tabs (2026-08-03, user request): added `basic`, `fibonacci`, `traits_demo` (traits/records demo) alongside quickstart, AI/ML tensor graph, and API hello_http. All verbatim, script-verified.
+Notes:
+- SECTION 02 — SOURCE expanded from 3 to 6 tabs (2026-08-03, user request): added `basic`, `fibonacci`, `traits_demo` (traits/records demo) alongside quickstart, AI/ML tensor graph, and API hello_http.
+- USER DEVIATION (2026-08-03, requested): comments and string messages in the 4 Portuguese samples translated to English; the verify script now asserts CODE-EQUIVALENCE (comments/strings may differ, code must match source exactly). Section heading/subtitle/footnote updated accordingly.
 
 ## Fact checklist (all must pass)
 
@@ -32,7 +34,7 @@ Note: SECTION 02 — SOURCE expanded from 3 to 6 tabs (2026-08-03, user request)
 - [x] AI/ML claims ⊆ README "AI/ML core" section — all 6 points trace to README Key Features.
 - [x] API claims ⊆ README "API Platform" section — all 6 points trace to README Key Features.
 - [x] CLI commands ⊆ README "CLI Essentials" — all 10 rows verbatim from README table.
-- [x] Code samples byte-identical to source `examples/*.spectra` — verified via script (6/6 OK).
+- [x] Code samples code-equivalent to source `examples/*.spectra` — verified via script (6/6 OK): code identical, only comments/strings translated.
 - [x] Install instructions match README Installation section — 4 steps verbatim; no invented `cargo install spectralang`.
 - [x] Logo assets byte-identical to `D:\Lang\SpectraLang\assets\` — hash-checked.
 - [x] Purple palette values trace to logo SVG fills (`#7d4fcd`, `#7e50ce`) — used as `--purple`/`--purple-2` tokens.
@@ -41,7 +43,7 @@ Note: SECTION 02 — SOURCE expanded from 3 to 6 tabs (2026-08-03, user request)
 
 ## Sample verification note (per PRE review finding #3)
 
-`spectralang check` with CLI 0.2.7 was not run (CLI not installed in this environment). Per the plan's honesty guard, the site does NOT claim the samples compile — the section is titled "REAL CODE, VERBATIM" and states samples are byte-identical to bundled examples, which is verified. If `spectralang check` is run later and fails on any sample, the wording must be revisited.
+`spectralang check` with CLI 0.2.7 was not run (CLI not installed in this environment). Per the plan's honesty guard, the site does NOT claim the samples compile — the section states samples come from the repository with code untouched and comments translated. If `spectralang check` is run later and fails on any sample, the wording must be revisited.
 
 ## Deploy status
 
