@@ -36,7 +36,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="hover:text-purple-bright"
           >
-            &gt; github.com/Estevaobonatto/SpectraLang
+            &gt; {site.repo.replace("https://", "")}
           </a>
           <p>
             &gt; built with Rust + Cranelift, served with Next.js on Vercel

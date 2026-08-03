@@ -4,7 +4,7 @@ export const site = {
   tagline:
     "A Rust-implemented language and toolchain for AI/ML workloads and first-class API services.",
   status: "active development",
-  repo: "https://github.com/Estevaobonatto/SpectraLang",
+  repo: "https://github.com/Hyska-Software/SpectraLang",
   license: "MIT",
 } as const;
 
@@ -58,7 +58,7 @@ export const cliCommands = [
 ] as const;
 
 export const installSteps = [
-  { cmd: "git clone https://github.com/Estevaobonatto/SpectraLang.git", desc: "Clone the repository" },
+  { cmd: "git clone https://github.com/Hyska-Software/SpectraLang.git", desc: "Clone the repository" },
   { cmd: "cd SpectraLang", desc: "Enter the workspace" },
   { cmd: "cargo build", desc: "Build the full workspace (compiler, runtime, CLI, LSP)" },
   { cmd: "cargo install --path tools/spectra-cli", desc: "Install the spectralang CLI on your PATH" },

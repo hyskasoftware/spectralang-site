@@ -50,6 +50,9 @@ DEPLOYED — production live at https://spectralang.vercel.app (2026-08-03).
 | Version badge v0.2.7 | PASS — rendered in Nav |
 | OG url | PASS — points to https://spectralang.vercel.app |
 | Status badge | PASS — "[ active development - not yet a stable production language ]" |
-| GitHub repo | https://github.com/hyskasoftware/spectralang-site (branch master) |
+| GitHub repo (site) | https://github.com/hyskasoftware/spectralang-site (branch master) |
+| GitHub repo (language, corrected) | https://github.com/Hyska-Software/SpectraLang (branch main) — all links, clone commands, footer, and doc links point here; zero `Estevaobonatto` references remaining in production HTML |
+
+Note: `docs/goals/spectralang-site/PLAN.md` and `GOAL.md` still mention the old `Estevaobonatto` URL in two places; the executable truth lives in `lib/site.ts`, which is corrected. Historical references in planning docs are left as recorded evidence of the correction.
 
 Note: deployment was made via Vercel CLI (project `spectralang`, team hyskas-projects). Git integration for auto-deploy on push can be connected from the Vercel dashboard: project spectralang → Settings → Git.
