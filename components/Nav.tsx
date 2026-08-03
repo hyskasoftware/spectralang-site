@@ -1,34 +1,50 @@
 "use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
+import { usePathname } from "next/navigation";
 import { site, nav } from "@/lib/site";
 import Link from "next/link";
 
+function isActive(href: string, pathname: string): boolean {
+  if (href === "/docs") return pathname.startsWith("/docs");
+  if (href.startsWith("/#")) return pathname === "/";
+  return pathname === href;
+}
+
 export function Nav() {
+  const pathname = usePathname();
+
   return (
     <header className="sticky top-0 z-50 border-b-2 border-border-strong bg-bg/95 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="#top" className="flex items-center gap-3">
-          <span className="grid h-8 w-8 place-items-center border-2 border-purple-bright bg-purple-dark text-xs font-bold text-purple-bright">
-            S
-          </span>
+        <Link href="/" className="flex items-center gap-3" aria-label="SpectraLang home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.svg"
+            alt=""
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain"
+          />
           <span className="text-sm font-bold tracking-widest text-text">
             SPECTRALANG<span className="text-purple-bright">_</span>
-            <span className="ml-2 inline-block border border-border bg-surface px-1.5 py-0.5 text-[10px] text-muted">
-              v{site.version}
-            </span>
           </span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
           {nav.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
-              className="px-3 py-2 text-xs font-semibold tracking-widest text-muted transition-colors hover:bg-surface hover:text-purple-bright"
+              aria-current={isActive(item.href, pathname) ? "page" : undefined}
+              className={`px-3 py-2 text-xs font-semibold tracking-widest transition-colors hover:bg-surface hover:text-purple-bright ${
+                isActive(item.href, pathname)
+                  ? "bg-surface text-purple-bright"
+                  : "text-muted"
+              }`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <a
             href={site.repo}
@@ -68,12 +84,17 @@ export function Nav() {
               <nav className="mt-8 flex flex-col gap-2" aria-label="Mobile">
                 {nav.map((item) => (
                   <Dialog.Close asChild key={item.href}>
-                    <a
+                    <Link
                       href={item.href}
-                      className="border border-border bg-surface px-4 py-3 text-xs font-semibold tracking-widest text-text hover:text-purple-bright"
+                      aria-current={isActive(item.href, pathname) ? "page" : undefined}
+                      className={`border border-border bg-surface px-4 py-3 text-xs font-semibold tracking-widest hover:text-purple-bright ${
+                        isActive(item.href, pathname)
+                          ? "text-purple-bright"
+                          : "text-text"
+                      }`}
                     >
                       &gt; {item.label}
-                    </a>
+                    </Link>
                   </Dialog.Close>
                 ))}
                 <a

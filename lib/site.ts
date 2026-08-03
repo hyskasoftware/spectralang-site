@@ -9,10 +9,10 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "Features", href: "#features" },
-  { label: "Code", href: "#code" },
-  { label: "Install", href: "#install" },
-  { label: "Docs", href: "#docs" },
+  { label: "Features", href: "/#features" },
+  { label: "Code", href: "/#code" },
+  { label: "Install", href: "/#install" },
+  { label: "Docs", href: "/docs" },
 ] as const;
 
 export const features = [
@@ -66,7 +66,6 @@ export const installSteps = [
 
 export const docLinks = [
   { title: "Language reference", href: "docs/language-reference-alpha.md", note: "alpha reference" },
-  { title: "The Book", href: "docs/book", note: "guides" },
   { title: "API library", href: "docs/api", note: "under active development" },
   { title: "Strategic plan", href: "docs/production-ai-implementation-plan.md", note: "30+ phases" },
   { title: "Roadmap", href: "roadmap/roadmap.toml", note: "machine-readable" },

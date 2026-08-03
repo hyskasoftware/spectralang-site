@@ -15,14 +15,6 @@ export function Hero() {
             height={96}
             className="h-20 w-20 drop-shadow-[0_0_24px_rgba(125,79,205,0.55)] sm:h-24 sm:w-24"
           />
-          <div className="text-left">
-          <p className="text-[10px] tracking-[0.35em] text-muted">
-            {"/// A LANGUAGE FOR AI/ML WORKLOADS AND API SERVICES"}
-          </p>
-            <h1 className="text-2xl font-black tracking-tight text-text sm:text-4xl">
-              SPECTRA<span className="text-purple-bright glow-purple">LANG</span>
-            </h1>
-          </div>
         </div>
 
         <AsciiBanner />
@@ -39,13 +31,13 @@ export function Hero() {
             href="#install"
             className="border-2 border-purple-bright bg-purple px-8 py-4 text-sm font-bold tracking-widest text-bg shadow-hard-purple transition-transform hover:-translate-y-1 hover:bg-purple-bright"
           >
-            GET STARTED
+            &gt; DOWNLOAD LANGUAGE
           </a>
           <a
-            href="#code"
+            href="/docs"
             className="border-2 border-border-strong bg-surface px-8 py-4 text-sm font-bold tracking-widest text-purple-bright transition-transform hover:-translate-y-1 hover:border-purple-bright"
           >
-            &gt; READ THE CODE
+            &gt; READ THE DOCS
           </a>
         </div>
 

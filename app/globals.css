@@ -159,6 +159,117 @@ body {
   height: 8px;
 }
 
+/* ---- markdown prose (docs page) ---- */
+.md-prose {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.md-prose > :first-child {
+  margin-top: 0;
+}
+
+.md-prose h1,
+.md-prose h2,
+.md-prose h3,
+.md-prose h4 {
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin: 2.25rem 0 0.9rem;
+  scroll-margin-top: 6rem;
+}
+
+.md-prose h1 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--border-strong);
+  padding-bottom: 0.5rem;
+}
+
+.md-prose h2 {
+  font-size: 1.25rem;
+  color: var(--purple-bright);
+}
+
+.md-prose h2::before {
+  content: "## ";
+  color: var(--purple-dim);
+}
+
+.md-prose h3 {
+  font-size: 1.05rem;
+}
+
+.md-prose h3::before {
+  content: "### ";
+  color: var(--purple-dim);
+}
+
+.md-prose h4 {
+  font-size: 0.95rem;
+  color: var(--purple-bright);
+}
+
+.md-prose p {
+  margin: 0.9rem 0;
+}
+
+.md-prose ul,
+.md-prose ol {
+  margin: 0.9rem 0;
+  padding-left: 1.6rem;
+}
+
+.md-prose ul {
+  list-style: none;
+}
+
+.md-prose ul > li {
+  position: relative;
+}
+
+.md-prose ul > li::before {
+  content: ">";
+  position: absolute;
+  left: -1.1rem;
+  color: var(--purple-bright);
+  font-weight: 700;
+}
+
+.md-prose ol {
+  list-style: decimal;
+}
+
+.md-prose ol > li::marker {
+  color: var(--purple-bright);
+  font-weight: 700;
+}
+
+.md-prose li {
+  margin: 0.3rem 0;
+}
+
+.md-prose pre {
+  margin: 1rem 0;
+}
+
+.md-prose pre code {
+  border: none;
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.md-prose strong {
+  color: var(--purple-bright);
+}
+
+.md-prose img {
+  max-width: 100%;
+  border: 2px solid var(--border-strong);
+}
+
 /* ---- marquee ticker ---- */
 @keyframes ticker {
   0% {

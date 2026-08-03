@@ -1,4 +1,5 @@
 import { docLinks, site } from "@/lib/site";
+import Link from "next/link";
 
 export function DocsLinks() {
   return (
@@ -10,6 +11,24 @@ export function DocsLinks() {
         </h2>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Link
+            href="/docs"
+            className="ascii-box group flex flex-col gap-2 border-purple-bright bg-purple p-5 transition-transform hover:-translate-y-1 sm:col-span-2 lg:col-span-3 lg:flex-row lg:items-center lg:justify-between"
+          >
+            <div className="flex flex-col gap-2">
+              <span className="text-[10px] tracking-widest text-bg/70">[ FULL DOCS ]</span>
+              <span className="text-sm font-black tracking-widest text-bg">
+                THE COMPLETE REFERENCE — IN TABS
+              </span>
+              <span className="text-[11px] text-bg/80">
+                language reference · CLI reference · installation · usage — live from the
+                repository
+              </span>
+            </div>
+            <span className="mt-2 text-[10px] tracking-widest text-bg/70 group-hover:text-bg lg:mt-0">
+              &gt; OPEN /DOCS
+            </span>
+          </Link>
           {docLinks.map((d) => (
             <a
               key={d.href}
