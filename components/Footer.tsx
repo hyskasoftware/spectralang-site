@@ -1,4 +1,5 @@
 import { site } from "@/lib/site";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -38,8 +39,11 @@ export function Footer() {
           >
             &gt; {site.repo.replace("https://", "")}
           </a>
+          <Link href="/license" className="hover:text-purple-bright">
+            &gt; {site.license} License
+          </Link>
           <p>
-            &gt; a JIT-compiled language for AI/ML and API workloads, served on Vercel
+            &gt; a JIT-compiled language for AI/ML and API workloads
           </p>
         </div>
       </div>

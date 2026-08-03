@@ -1,4 +1,4 @@
-import { docLinks, site } from "@/lib/site";
+import { docLinks } from "@/lib/site";
 import Link from "next/link";
 
 export function DocsLinks() {
@@ -18,11 +18,11 @@ export function DocsLinks() {
             <div className="flex flex-col gap-2">
               <span className="text-[10px] tracking-widest text-bg/70">[ FULL DOCS ]</span>
               <span className="text-sm font-black tracking-widest text-bg">
-                THE COMPLETE REFERENCE — IN TABS
+                THE COMPLETE REFERENCE
               </span>
               <span className="text-[11px] text-bg/80">
-                language reference · CLI reference · installation · usage — live from the
-                repository
+                language reference · CLI reference · installation · usage — one URL per topic,
+                built from the repository locally
               </span>
             </div>
             <span className="mt-2 text-[10px] tracking-widest text-bg/70 group-hover:text-bg lg:mt-0">
@@ -30,11 +30,9 @@ export function DocsLinks() {
             </span>
           </Link>
           {docLinks.map((d) => (
-            <a
+            <Link
               key={d.href}
-              href={`${site.repo}/blob/main/${d.href}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={d.href}
               className="ascii-box group flex flex-col gap-2 bg-bg-soft p-5 transition-transform hover:-translate-y-1"
             >
               <span className="text-[10px] tracking-widest text-muted">[ DOC ]</span>
@@ -43,24 +41,10 @@ export function DocsLinks() {
               </span>
               <span className="text-[11px] text-muted">{d.note}</span>
               <span className="mt-2 text-[10px] tracking-widest text-purple-dim group-hover:text-purple-bright">
-                &gt; OPEN_REPOSITORY
+                &gt; OPEN_DOCS
               </span>
-            </a>
+            </Link>
           ))}
-          <a
-            key="repo"
-            href={site.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ascii-box group flex flex-col gap-2 border-purple-bright bg-purple p-5 transition-transform hover:-translate-y-1"
-          >
-            <span className="text-[10px] tracking-widest text-bg/70">[ SOURCE ]</span>
-            <span className="text-sm font-black tracking-widest text-bg">THE REPOSITORY</span>
-            <span className="text-[11px] text-bg/80">
-              compiler · midend · backend · runtime · CLI · LSP
-            </span>
-            <span className="mt-2 text-[10px] tracking-widest text-bg/70">&gt; OPEN_GITHUB</span>
-          </a>
         </div>
       </div>
     </section>

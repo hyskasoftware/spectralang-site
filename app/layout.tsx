@@ -12,14 +12,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://spectralang.vercel.app"),
+  metadataBase: new URL("https://spectralang.org"),
   title: "SpectraLang — AI/ML language and API platform",
   description: site.tagline,
   icons: { icon: "/icon.svg" },
   openGraph: {
     title: "SpectraLang",
     description: site.tagline,
-    url: "https://spectralang.vercel.app",
+    url: "https://spectralang.org",
     siteName: "SpectraLang",
     images: [{ url: "/logo.svg", width: 1254, height: 1254, alt: "SpectraLang logo" }],
     type: "website",

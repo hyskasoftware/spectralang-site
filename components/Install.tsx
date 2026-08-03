@@ -1,5 +1,6 @@
 import { installSteps, cliCommands } from "@/lib/site";
 import { ReleaseDownload } from "@/components/ReleaseDownload";
+import { CopyButton } from "@/components/CopyButton";
 
 export function Install() {
   return (
@@ -28,9 +29,12 @@ export function Install() {
             <ol className="flex flex-col gap-4 p-5">
               {installSteps.map((step, i) => (
                 <li key={step.cmd}>
-                  <p className="text-[10px] tracking-widest text-muted">
-                    STEP {String(i + 1).padStart(2, "0")} — {step.desc}
-                  </p>
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-[10px] tracking-widest text-muted">
+                      STEP {String(i + 1).padStart(2, "0")} — {step.desc}
+                    </p>
+                    <CopyButton text={step.cmd} />
+                  </div>
                   <pre className="mt-2 border border-border bg-bg px-4 py-3 text-xs text-purple-bright">
                     <code>
                       <span className="text-muted select-none">$&gt; </span>

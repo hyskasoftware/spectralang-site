@@ -65,10 +65,10 @@ export const installSteps = [
 ] as const;
 
 export const docLinks = [
-  { title: "Language reference", href: "docs/language-reference-alpha.md", note: "alpha reference" },
-  { title: "API library", href: "docs/api", note: "under active development" },
-  { title: "Strategic plan", href: "docs/production-ai-implementation-plan.md", note: "30+ phases" },
-  { title: "Roadmap", href: "roadmap/roadmap.toml", note: "machine-readable" },
+  { title: "Quick Start", href: "/docs/usage", note: "first module in minutes" },
+  { title: "Language reference", href: "/docs/introducao", note: "6 chapters, 62 topics" },
+  { title: "Standard library", href: "/docs/stdlib", note: "io · string · math · tensor · ml" },
+  { title: "CLI reference", href: "/docs/cli", note: "commands, flags, exit codes" },
 ] as const;
 
 export const codeSamples = {

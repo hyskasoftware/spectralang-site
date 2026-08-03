@@ -1,5 +1,6 @@
 import { site } from "@/lib/site";
 import { AsciiBanner } from "@/components/ascii/banner";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -19,8 +20,14 @@ export function Hero() {
 
         <AsciiBanner />
 
-        <div className="ascii-box max-w-2xl bg-bg/80 px-6 py-4">
-          <p className="text-sm leading-relaxed text-text md:text-base">{site.tagline}</p>
+        <div className="ascii-box max-w-3xl bg-bg/80 px-6 py-5">
+          <p className="text-sm leading-relaxed text-text md:text-base">
+            {site.tagline}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            Tensors, autodiff and differentiable regions are language-level constructs, not
+            libraries — JIT-powered, from tensor graphs to production APIs.
+          </p>
           <p className="mt-3 text-[10px] tracking-widest text-muted">
             [ TENSOR-FIRST AI/ML CORE ] [ FIRST-CLASS API SERVICES ] [ JIT EXECUTION ]
           </p>
@@ -33,12 +40,12 @@ export function Hero() {
           >
             &gt; DOWNLOAD LANGUAGE
           </a>
-          <a
+          <Link
             href="/docs"
             className="border-2 border-border-strong bg-surface px-8 py-4 text-sm font-bold tracking-widest text-purple-bright transition-transform hover:-translate-y-1 hover:border-purple-bright"
           >
             &gt; READ THE DOCS
-          </a>
+          </Link>
         </div>
 
         <p className="text-[10px] tracking-widest text-muted">
