@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0a0910;
+  --bg-soft: #12101c;
+  --surface: #17142a;
+  --surface-2: #1e1a33;
+  --border: #3a3362;
+  --border-strong: #57468f;
+  --text: #f2eefb;
+  --text-muted: #9d94c0;
+  --purple: #7d4fcd;
+  --purple-2: #7e50ce;
+  --purple-bright: #a678ff;
+  --purple-dim: #4a2d8f;
+  --purple-dark: #2a1b52;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-purple: var(--purple);
+  --color-purple-2: var(--purple-2);
+  --color-purple-bright: var(--purple-bright);
+  --color-purple-dim: var(--purple-dim);
+  --color-purple-dark: var(--purple-dark);
+  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-jetbrains-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--purple);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--purple-dim);
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple);
+}
+
+/* ---- brutalist core ---- */
+.b-hard {
+  border: 2px solid var(--border-strong);
+}
+
+.b-thin {
+  border: 1px solid var(--border);
+}
+
+.shadow-hard {
+  box-shadow: 6px 6px 0 0 var(--purple-dark);
+}
+
+.shadow-hard-sm {
+  box-shadow: 4px 4px 0 0 var(--purple-dark);
+}
+
+.shadow-hard-purple {
+  box-shadow: 6px 6px 0 0 var(--purple);
+}
+
+.glow-purple {
+  color: var(--purple-bright);
+  text-shadow:
+    0 0 8px rgba(166, 120, 255, 0.6),
+    0 0 24px rgba(125, 79, 205, 0.45);
+}
+
+.glow-purple-soft {
+  text-shadow:
+    0 0 12px rgba(125, 79, 205, 0.35),
+    0 0 40px rgba(125, 79, 205, 0.18);
+}
+
+.glow-purple-box {
+  box-shadow:
+    0 0 12px rgba(125, 79, 205, 0.35),
+    inset 0 0 12px rgba(125, 79, 205, 0.12);
+}
+
+/* ---- ascii helpers ---- */
+.ascii-box {
+  position: relative;
+  border: 2px solid var(--border-strong);
+}
+
+.ascii-box::before,
+.ascii-box::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--purple-bright);
+  pointer-events: none;
+}
+
+.ascii-box::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.ascii-box::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+.ascii-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 8px,
+    rgba(125, 79, 205, 0.08) 8px 16px
+  );
+}
+
+/* ---- prose for code windows ---- */
+.code-window {
+  background: var(--bg-soft);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 4;
+}
+
+.code-window::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* ---- marquee ticker ---- */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker {
+  animation: ticker 28s linear infinite;
 }

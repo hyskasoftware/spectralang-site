@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Evidence scripts live outside the app codebase.
+    "docs/**",
   ]),
 ]);
 
