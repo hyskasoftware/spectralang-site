@@ -40,6 +40,7 @@ Notes:
 - [x] Purple palette values trace to logo SVG fills (`#7d4fcd`, `#7e50ce`) — used as `--purple`/`--purple-2` tokens.
 - [x] External links point to existing repo paths — doc links use README-referenced paths (`docs/language-reference-alpha.md`, `docs/book`, `docs/api`, `docs/production-ai-implementation-plan.md`, `roadmap/roadmap.toml`).
 - [x] Site conveys active-development status per README "Project Status" — hero badge + footer `v0.2.7 / active development`; no production-readiness claims.
+- [x] Install section fetches live from the GitHub latest release (USER REQUEST, 2026-08-03): per-platform download buttons (Windows setup/exe/lsp; Linux deb/tar/binary/lsp; macOS arm64/x64), `[ EXPERIMENTAL ]` badges on Linux and macOS, `[ STABLE ]` on Windows. Static `lib/site.ts` version remains 0.2.7 (Cargo.toml truth); the live section shows the actual release tag v0.2.8.
 
 ## Sample verification note (per PRE review finding #3)
 
@@ -59,6 +60,7 @@ DEPLOYED — production live at https://spectralang.vercel.app (2026-08-03).
 | Status badge | PASS — "[ active development - not yet a stable production language ]" |
 | GitHub repo (site) | https://github.com/hyskasoftware/spectralang-site (branch master) |
 | GitHub repo (language, corrected) | https://github.com/Hyska-Software/SpectraLang (branch main) — all links, clone commands, footer, and doc links point here; zero `Estevaobonatto` references remaining in production HTML |
+| Live release section | PASS — fetches `api.github.com/.../releases/latest` on load; production DOM shows v0.2.8, 2× [ EXPERIMENTAL ] (linux/macos), 1× [ STABLE ] (windows), Windows setup + CLI + LSP, Linux deb + tar + binary, macOS arm64 + x64, VS Code .vsix; loading state resolves; error state falls back to releases page link |
 
 Note: `docs/goals/spectralang-site/PLAN.md` and `GOAL.md` still mention the old `Estevaobonatto` URL in two places; the executable truth lives in `lib/site.ts`, which is corrected. Historical references in planning docs are left as recorded evidence of the correction.
 

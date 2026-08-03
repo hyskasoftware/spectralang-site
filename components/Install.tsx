@@ -1,4 +1,5 @@
 import { installSteps, cliCommands } from "@/lib/site";
+import { ReleaseDownload } from "@/components/ReleaseDownload";
 
 export function Install() {
   return (
@@ -8,8 +9,16 @@ export function Install() {
         <h2 className="mt-3 text-2xl font-black tracking-tight text-text md:text-4xl">
           INSTALL<span className="text-purple-bright glow-purple">_IT</span>
         </h2>
+        <p className="mt-2 max-w-xl text-sm text-muted">
+          Grab the latest release for your platform — fetched live from GitHub — or build from
+          source.
+        </p>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        <div className="mt-12">
+          <ReleaseDownload />
+        </div>
+
+        <div className="mt-8 grid gap-8 lg:grid-cols-2">
           <div className="ascii-box bg-bg-soft">
             <header className="border-b-2 border-border-strong bg-surface-2 px-5 py-3">
               <h3 className="text-sm font-black tracking-widest text-purple-bright">
