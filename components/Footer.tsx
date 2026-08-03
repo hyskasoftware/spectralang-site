@@ -39,7 +39,7 @@ export function Footer() {
             &gt; {site.repo.replace("https://", "")}
           </a>
           <p>
-            &gt; built with Rust + Cranelift, served with Next.js on Vercel
+            &gt; a JIT-compiled language for AI/ML and API workloads, served on Vercel
           </p>
         </div>
       </div>

@@ -23,7 +23,7 @@ OK 00_hello_http.spectra (1541 bytes)
 ## Fact checklist (all must pass)
 
 - [x] Version `0.2.7` matches `tools/spectra-cli/Cargo.toml` — rendered in Nav badge + Footer.
-- [x] Pitch line matches README intro — `lib/site.ts` `tagline` is verbatim README line 3.
+- [x] Pitch line — USER DEVIATION (2026-08-03, requested): tagline rewritten to focus on the language itself ("A language designed for AI/ML workloads and first-class API services.") instead of the README's "Rust-implemented language and toolchain"; same two-workstream facts preserved. Also removed Rust/Cranelift/toolchain mentions from Hero kicker, Hero badges, Features intro, and Footer.
 - [x] AI/ML claims ⊆ README "AI/ML core" section — all 6 points trace to README Key Features.
 - [x] API claims ⊆ README "API Platform" section — all 6 points trace to README Key Features.
 - [x] CLI commands ⊆ README "CLI Essentials" — all 10 rows verbatim from README table.

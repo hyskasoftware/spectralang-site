@@ -9,8 +9,8 @@ export function Features() {
           TWO FIRST-CLASS<span className="text-purple-bright glow-purple">_TRACKS</span>
         </h2>
         <p className="mt-2 max-w-xl text-sm text-muted">
-          One compiler, one runtime, one toolchain. Two production workstreams that are first-class
-          in the language and the standard library.
+          One language, two production workstreams that are first-class in the language and the
+          standard library.
         </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">

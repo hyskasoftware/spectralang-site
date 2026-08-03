@@ -17,7 +17,7 @@ export function Hero() {
           />
           <div className="text-left">
           <p className="text-[10px] tracking-[0.35em] text-muted">
-            {"/// RUST-IMPLEMENTED LANGUAGE & TOOLCHAIN"}
+            {"/// A LANGUAGE FOR AI/ML WORKLOADS AND API SERVICES"}
           </p>
             <h1 className="text-2xl font-black tracking-tight text-text sm:text-4xl">
               SPECTRA<span className="text-purple-bright glow-purple">LANG</span>
@@ -30,7 +30,7 @@ export function Hero() {
         <div className="ascii-box max-w-2xl bg-bg/80 px-6 py-4">
           <p className="text-sm leading-relaxed text-text md:text-base">{site.tagline}</p>
           <p className="mt-3 text-[10px] tracking-widest text-muted">
-            [ TENSOR-FIRST AI/ML CORE ] [ FIRST-CLASS API SERVICES ] [ JIT VIA CRANELIFT ]
+            [ TENSOR-FIRST AI/ML CORE ] [ FIRST-CLASS API SERVICES ] [ JIT EXECUTION ]
           </p>
         </div>
 

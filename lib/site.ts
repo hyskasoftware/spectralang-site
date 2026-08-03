@@ -2,7 +2,7 @@ export const site = {
   name: "SpectraLang",
   version: "0.2.7",
   tagline:
-    "A Rust-implemented language and toolchain for AI/ML workloads and first-class API services.",
+    "A language designed for AI/ML workloads and first-class API services.",
   status: "active development",
   repo: "https://github.com/Hyska-Software/SpectraLang",
   license: "MIT",
@@ -23,7 +23,7 @@ export const features = [
     points: [
       "First-class tensors with shape and dtype constraints (Tensor<T, R>)",
       "Reverse-mode autodiff and differentiable regions as language-level constructs",
-      "SSA-based IR with optimization passes and Cranelift JIT execution",
+      "SSA-based IR with optimization passes and JIT execution",
       "ML framework layer: layers, losses, optimizers, datasets, dataloaders",
       "ONNX import/export, NumPy .npy interchange, Python/FFI bridges",
       "Experiment tracking, distributed-training foundations, reproducibility tooling",
