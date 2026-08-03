@@ -17,7 +17,7 @@ export function CodeTerminal() {
   return (
     <section id="code" className="border-b-2 border-border-strong">
       <div className="mx-auto max-w-6xl px-4 py-20">
-        <p className="text-[10px] tracking-[0.35em] text-muted">{"// SECTION 02 — SOURCE"}</p>
+        <p className="text-[11px] tracking-[0.35em] text-muted">{"// SECTION 02 — SOURCE"}</p>
         <h2 className="mt-3 text-2xl font-black tracking-tight text-text md:text-4xl">
           REAL CODE,<span className="text-purple-bright glow-purple">_TRANSLATED</span>
         </h2>
@@ -46,7 +46,7 @@ export function CodeTerminal() {
             {Object.values(codeSamples).map((s) => (
               <Tabs.Content key={s.label} value={s.label} className="focus:outline-none">
                 <div className="flex items-center justify-between border-b border-border bg-bg-soft px-4 py-2">
-                  <div className="flex items-center gap-2 text-[10px] text-muted">
+                  <div className="flex items-center gap-2 text-[11px] text-muted">
                     <span aria-hidden="true" className="text-purple-bright">
                       $&gt;
                     </span>
@@ -57,14 +57,14 @@ export function CodeTerminal() {
                       <Tooltip.Trigger asChild>
                         <button
                           onClick={() => copy(s.label, s.code)}
-                          className="border border-border bg-surface px-2 py-1 text-[10px] font-bold tracking-widest text-purple-bright transition-colors hover:border-purple-bright"
+                          className="min-h-[32px] border border-border bg-surface px-2.5 py-1.5 text-[11px] font-bold tracking-widest text-purple-bright transition-colors hover:border-purple-bright"
                         >
                           {copied === s.label ? "[ COPIED ]" : "[ COPY ]"}
                         </button>
                       </Tooltip.Trigger>
                       <Tooltip.Portal>
                         <Tooltip.Content
-                          className="border border-border-strong bg-surface-2 px-2 py-1 text-[10px] text-text"
+                          className="border border-border-strong bg-surface-2 px-2 py-1 text-[11px] text-text"
                           sideOffset={6}
                         >
                           Copy to clipboard
@@ -92,7 +92,7 @@ export function CodeTerminal() {
           </Tabs.Root>
         </div>
 
-        <p className="mt-4 text-[10px] tracking-widest text-muted">
+        <p className="mt-4 text-[11px] tracking-widest text-muted">
           * comments and messages translated to English for clarity — the code itself is unchanged
           from the bundled examples in the {site.repo} repository
         </p>

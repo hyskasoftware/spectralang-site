@@ -28,7 +28,7 @@ export function Hero() {
             Tensors, autodiff and differentiable regions are language-level constructs, not
             libraries — JIT-powered, from tensor graphs to production APIs.
           </p>
-          <p className="mt-3 text-[10px] tracking-widest text-muted">
+          <p className="mt-3 text-[11px] tracking-widest text-muted">
             [ TENSOR-FIRST AI/ML CORE ] [ FIRST-CLASS API SERVICES ] [ JIT EXECUTION ]
           </p>
         </div>
@@ -48,7 +48,7 @@ export function Hero() {
           </Link>
         </div>
 
-        <p className="text-[10px] tracking-widest text-muted">
+        <p className="text-[11px] tracking-widest text-muted">
           [ active development — not yet a stable production language ]
         </p>
       </div>

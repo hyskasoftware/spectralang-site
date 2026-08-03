@@ -45,6 +45,7 @@ body {
   color: var(--text);
   font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -148,11 +149,17 @@ body {
 /* ---- prose for code windows ---- */
 .code-window {
   background: var(--bg-soft);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   line-height: 1.6;
   overflow-x: auto;
   white-space: pre;
   tab-size: 4;
+}
+
+@media (min-width: 640px) {
+  .code-window {
+    font-size: 0.8rem;
+  }
 }
 
 .code-window::-webkit-scrollbar {
@@ -164,6 +171,7 @@ body {
   font-size: 0.875rem;
   line-height: 1.75;
   color: var(--text);
+  overflow-wrap: anywhere;
 }
 
 .md-prose > :first-child {

@@ -17,7 +17,7 @@ export function UsageTab({ slice }: { slice: string }) {
           (view full README)
         </a>
       </p>
-      <div className="ascii-box bg-bg p-6">
+      <div className="ascii-box bg-bg p-4 sm:p-6">
         <Markdown source={slice} />
       </div>
     </div>

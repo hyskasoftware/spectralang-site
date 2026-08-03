@@ -31,7 +31,7 @@ export function OnThisPage({ items }: { items: SubSection[] }) {
   return (
     <aside className="hidden w-52 shrink-0 xl:block">
       <div className="sticky top-24 border-2 border-border-strong bg-bg-soft p-4">
-        <p className="mb-3 text-[9px] font-bold tracking-[0.3em] text-purple-dim">
+        <p className="mb-3 text-[10px] font-bold tracking-[0.3em] text-purple-dim">
           {"// ON THIS PAGE"}
         </p>
         <nav aria-label="On this page" className="flex flex-col gap-0.5">
@@ -39,7 +39,7 @@ export function OnThisPage({ items }: { items: SubSection[] }) {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className={`border-l-2 px-2 py-1 text-[10px] leading-snug tracking-wide transition-colors ${
+              className={`border-l-2 px-2 py-1.5 text-[11px] leading-snug tracking-wide transition-colors ${
                 item.level === 4 ? "ml-3" : ""
               } ${
                 active === item.id

@@ -23,13 +23,13 @@ export function InstallTab() {
         <ol className="flex flex-col gap-4 p-5">
           {installSteps.map((step, i) => (
             <li key={step.cmd}>
-              <div className="flex items-center justify-between gap-3">
-                <p className="text-[10px] tracking-widest text-muted">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <p className="min-w-0 text-[10px] tracking-widest text-muted">
                   STEP {String(i + 1).padStart(2, "0")} — {step.desc}
                 </p>
                 <CopyButton text={step.cmd} />
               </div>
-              <pre className="mt-2 border border-border bg-bg px-4 py-3 text-xs text-purple-bright">
+              <pre className="mt-2 w-full min-w-0 overflow-x-auto border border-border bg-bg px-4 py-3 text-xs text-purple-bright">
                 <code>
                   <span className="text-muted select-none">$&gt; </span>
                   {step.cmd}

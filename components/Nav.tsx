@@ -106,7 +106,7 @@ export function Nav() {
                   GitHub
                 </a>
               </nav>
-              <p className="mt-auto text-[10px] text-muted">
+              <p className="mt-auto text-[11px] text-muted">
                 v{site.version} / {site.status}
               </p>
             </Dialog.Content>

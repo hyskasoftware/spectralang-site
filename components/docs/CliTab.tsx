@@ -10,7 +10,7 @@ export function CliTab({ slice }: { slice: string }) {
         <p className="mb-4 text-[10px] tracking-widest text-muted">
           SOURCE: <span className="text-purple-bright">section 5 of content/docs/reference/01-introducao.md</span>
         </p>
-        <div className="ascii-box bg-bg p-6">
+        <div className="ascii-box bg-bg p-4 sm:p-6">
           <p className="mb-2 text-[10px] font-bold tracking-widest text-purple-bright">
             [ FROM THE REFERENCE ]
           </p>
@@ -22,7 +22,7 @@ export function CliTab({ slice }: { slice: string }) {
         <p className="mb-4 text-[10px] tracking-widest text-muted">
           SNAPSHOT: README.md — CLI Essentials table (maintained on the home page)
         </p>
-        <div className="ascii-box bg-bg p-6">
+        <div className="ascii-box bg-bg p-4 sm:p-6">
           <p className="mb-2 text-[10px] font-bold tracking-widest text-purple-bright">
             [ CLI ESSENTIALS — SNAPSHOT ]
           </p>

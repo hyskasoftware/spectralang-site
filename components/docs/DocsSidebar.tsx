@@ -36,7 +36,7 @@ function ChapterBlock({
         <div className="flex flex-col gap-0.5 border-2 border-t-0 border-border-strong bg-surface p-2">
           <Link
             href={`/docs/${chapter.slug}`}
-            className={`px-2 py-1 text-[10px] font-bold tracking-widest ${
+            className={`px-2 py-1.5 text-[11px] font-bold tracking-widest ${
               active === chapter.slug
                 ? "text-purple-bright"
                 : "text-muted hover:text-purple-bright"
@@ -66,7 +66,7 @@ function TopicLink({
     <Link
       href={`/docs/${chapter.slug}/${topic.slug}`}
       aria-current={active === `${chapter.slug}/${topic.slug}` ? "true" : undefined}
-      className={`px-2 py-1 text-[10px] tracking-wider transition-colors ${
+      className={`min-h-[30px] px-2 py-1.5 text-[11px] tracking-wider transition-colors ${
         active === `${chapter.slug}/${topic.slug}`
           ? "bg-purple text-bg font-bold"
           : "text-muted hover:text-purple-bright"
@@ -123,11 +123,11 @@ export function DocsSidebar({ chapters }: { chapters: DocChapter[] }) {
   const tree = (
     <nav aria-label="Documentation" className="flex flex-col gap-5">
       <div>
-        <p className="mb-2 text-[9px] font-bold tracking-[0.3em] text-purple-dim">TOOLING</p>
+        <p className="mb-2 text-[10px] font-bold tracking-[0.3em] text-purple-dim">TOOLING</p>
         <ToolingBlock active={active} />
       </div>
       <div>
-        <p className="mb-2 text-[9px] font-bold tracking-[0.3em] text-purple-dim">
+        <p className="mb-2 text-[10px] font-bold tracking-[0.3em] text-purple-dim">
           LANGUAGE REFERENCE
         </p>
         <div className="flex flex-col gap-1.5">
@@ -155,7 +155,7 @@ export function DocsSidebar({ chapters }: { chapters: DocChapter[] }) {
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle docs navigation"
           aria-expanded={mobileOpen}
-          className="border-2 border-border-strong bg-surface px-3 py-1.5 text-[10px] font-bold tracking-widest text-purple-bright"
+          className="min-h-[36px] min-w-[36px] border-2 border-border-strong bg-surface px-3 py-1.5 text-[10px] font-bold tracking-widest text-purple-bright"
         >
           [NAV]
         </button>
@@ -170,7 +170,7 @@ export function DocsSidebar({ chapters }: { chapters: DocChapter[] }) {
             <button
               onClick={() => setMobileOpen(false)}
               aria-label="Close docs navigation"
-              className="border-2 border-border-strong bg-surface px-3 py-1.5 text-[10px] font-bold tracking-widest text-purple-bright"
+              className="min-h-[36px] min-w-[36px] border-2 border-border-strong bg-surface px-3 py-1.5 text-[10px] font-bold tracking-widest text-purple-bright"
             >
               [X]
             </button>
@@ -183,7 +183,7 @@ export function DocsSidebar({ chapters }: { chapters: DocChapter[] }) {
         </div>
       )}
 
-      <aside className="fixed bottom-0 left-0 top-16 z-40 hidden w-72 overflow-y-auto border-r-2 border-border-strong bg-bg-soft p-5 md:block">
+      <aside className="fixed bottom-0 left-0 top-16 z-40 hidden w-64 overflow-y-auto border-r-2 border-border-strong bg-bg-soft p-5 md:block lg:w-72">
         {tree}
       </aside>
     </>

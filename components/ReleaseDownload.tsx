@@ -188,8 +188,7 @@ export function ReleaseDownload() {
           {release.body && release.body.length > 180 ? "..." : ""}
         </p>
       ) : null}
-
-      <div className="grid gap-4 p-5 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 p-5 md:grid-cols-3">
         {PLATFORM_CARDS.map((card) => {
           const primary = pick(card.platform, card.primary);
           const secondary = pick(card.platform, card.secondary);
@@ -206,11 +205,11 @@ export function ReleaseDownload() {
                   {card.tag} {card.title}
                 </h4>
                 {card.experimental ? (
-                  <span className="border border-warn px-1.5 py-0.5 text-[9px] font-bold tracking-widest text-warn">
+                  <span className="border border-warn px-1.5 py-0.5 text-[10px] font-bold tracking-widest text-warn">
                     [ EXPERIMENTAL ]
                   </span>
                 ) : (
-                  <span className="border border-border px-1.5 py-0.5 text-[9px] font-bold tracking-widest text-purple-bright">
+                  <span className="border border-border px-1.5 py-0.5 text-[10px] font-bold tracking-widest text-purple-bright">
                     [ STABLE ]
                   </span>
                 )}
@@ -229,7 +228,7 @@ export function ReleaseDownload() {
                     </span>
                   </a>
                 ) : (
-                  <p className="border-2 border-dashed border-border px-4 py-3 text-center text-[10px] text-muted">
+                  <p className="border-2 border-dashed border-border px-4 py-3 text-center text-[11px] text-muted">
                     NO {card.title} ASSET IN THIS RELEASE
                   </p>
                 )}
@@ -241,7 +240,7 @@ export function ReleaseDownload() {
                           href={a.browser_download_url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-between gap-2 border border-border bg-surface px-3 py-2 text-[10px] text-muted transition-colors hover:border-purple-bright hover:text-purple-bright"
+                          className="flex items-center justify-between gap-2 border border-border bg-surface px-3 py-2 text-[11px] text-muted transition-colors hover:border-purple-bright hover:text-purple-bright"
                         >
                           <span className="truncate">{KIND_LABEL[a.kind]}</span>
                           <span className="shrink-0 text-purple-dim">{formatSize(a.size)}</span>
@@ -268,8 +267,7 @@ export function ReleaseDownload() {
             >
               <span className="text-purple-bright">&gt;</span>
               VS Code extension ({formatSize(a.size)}) — {a.name}
-            </a>
-          ))}
+            </a>          ))}
         </footer>
       ) : null}
     </div>

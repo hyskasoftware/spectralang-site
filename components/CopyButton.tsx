@@ -19,7 +19,7 @@ export function CopyButton({ text, label = "COPY" }: { text: string; label?: str
     <button
       onClick={copy}
       aria-label={`Copy: ${text}`}
-      className={`border px-2 py-1 text-[9px] font-bold tracking-widest transition-colors ${
+      className={`min-h-[32px] border px-2.5 py-1.5 text-[10px] font-bold tracking-widest transition-colors ${
         copied
           ? "border-purple-bright bg-purple text-bg"
           : "border-border bg-surface text-muted hover:border-purple-bright hover:text-purple-bright"

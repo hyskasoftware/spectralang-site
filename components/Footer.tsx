@@ -12,7 +12,7 @@ export function Footer() {
             <p className="text-xs font-black tracking-widest text-text">
               SPECTRA<span className="text-purple-bright">LANG</span>
             </p>
-            <p className="text-[10px] text-muted">
+            <p className="text-[11px] text-muted">
               v{site.version} · {site.status} · {site.license} License
             </p>
           </div>
