@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
 import { buildDocsTree, flattenPages } from "@/lib/docs-tree";
 import { InstallTab } from "@/components/docs/InstallTab";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import Link from "next/link";
 
 const tree = buildDocsTree();
 
 export const metadata: Metadata = {
-  title: "Installation — SpectraLang Docs",
-  description: "Download the latest release or build the whole toolchain from source.",
+  title: "Install SpectraLang — Windows, Linux, macOS and Build from Source",
+  description:
+    "How to install SpectraLang: download prebuilt binaries for Windows, Linux (.deb) and macOS (ARM64/x64), or build the full toolchain from source with cargo.",
+  alternates: { canonical: "/docs/install" },
+  keywords: ["install SpectraLang", "SpectraLang windows", "SpectraLang linux", "SpectraLang macOS", "SpectraLang from source"],
 };
 
 export default function InstallPage() {
@@ -18,6 +23,13 @@ export default function InstallPage() {
 
   return (
     <div>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Documentation", path: "/docs" },
+          { name: "Install", path: "/docs/install" },
+        ])}
+      />
       <nav aria-label="Breadcrumb" className="text-[11px] tracking-widest text-muted">
         <Link href="/docs" className="text-purple-bright hover:text-text">
           DOCS

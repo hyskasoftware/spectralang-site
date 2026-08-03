@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
 import { buildDocsTree, flattenPages, readQuickstartSlice } from "@/lib/docs-tree";
 import { UsageTab } from "@/components/docs/UsageTab";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import Link from "next/link";
 
 const tree = buildDocsTree();
 
 export const metadata: Metadata = {
-  title: "Quick Start — SpectraLang Docs",
-  description: "The quick start tour: your first module, compile, run and check.",
+  title: "SpectraLang Quick Start — Your First Module in Minutes",
+  description:
+    "SpectraLang quick start tutorial: write, compile, run and check your first module — variables, functions, control flow and the spectralang CLI.",
+  alternates: { canonical: "/docs/usage" },
+  keywords: ["SpectraLang tutorial", "SpectraLang quick start", "SpectraLang hello world", "SpectraLang first module"],
 };
 
 export default function UsagePage() {
@@ -18,6 +23,13 @@ export default function UsagePage() {
 
   return (
     <div>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Documentation", path: "/docs" },
+          { name: "Quick Start", path: "/docs/usage" },
+        ])}
+      />
       <nav aria-label="Breadcrumb" className="text-[11px] tracking-widest text-muted">
         <Link href="/docs" className="text-purple-bright hover:text-text">
           DOCS

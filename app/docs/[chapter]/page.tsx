@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildDocsTree, flattenPages } from "@/lib/docs-tree";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import Link from "next/link";
 
 const tree = buildDocsTree();
@@ -20,8 +22,10 @@ export async function generateMetadata({
   const ch = tree.chapters.find((c) => c.slug === chapter);
   if (!ch) return {};
   return {
-    title: `${ch.label} — ${ch.title} | SpectraLang Docs`,
+    title: `${ch.title} — SpectraLang Language Reference`,
     description: ch.description,
+    alternates: { canonical: `/docs/${ch.slug}` },
+    keywords: [`SpectraLang ${ch.title.toLowerCase()}`, "SpectraLang reference"],
   };
 }
 
@@ -40,6 +44,13 @@ export default async function ChapterPage({
 
   return (
     <div>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Documentation", path: "/docs" },
+          { name: ch.title, path: `/docs/${ch.slug}` },
+        ])}
+      />
       <nav aria-label="Breadcrumb" className="text-[11px] tracking-widest text-muted">
         <Link href="/docs" className="text-purple-bright hover:text-text">
           DOCS

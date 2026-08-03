@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
 import { buildDocsTree, flattenPages, readCliSlice } from "@/lib/docs-tree";
 import { CliTab } from "@/components/docs/CliTab";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import Link from "next/link";
 
 const tree = buildDocsTree();
 
 export const metadata: Metadata = {
-  title: "CLI Reference — SpectraLang Docs",
-  description: "Every spectralang command, flag, usage example and exit code.",
+  title: "CLI Reference — spectralang Commands, Flags and Exit Codes",
+  description:
+    "Complete SpectraLang CLI reference: compile, run, check, lint, bench, fmt, repl, new, package and release-info — with flags, usage examples and exit codes.",
+  alternates: { canonical: "/docs/cli" },
+  keywords: ["spectralang", "spectralang cli", "spectralang commands", "spectralang compile", "spectralang run"],
 };
 
 export default function CliPage() {
@@ -18,6 +23,13 @@ export default function CliPage() {
 
   return (
     <div>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Documentation", path: "/docs" },
+          { name: "CLI Reference", path: "/docs/cli" },
+        ])}
+      />
       <nav aria-label="Breadcrumb" className="text-[11px] tracking-widest text-muted">
         <Link href="/docs" className="text-purple-bright hover:text-text">
           DOCS

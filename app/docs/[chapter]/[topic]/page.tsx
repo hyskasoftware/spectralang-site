@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { buildDocsTree, flattenPages, sliceTopic, topicHeadingIds } from "@/lib/docs-tree";
 import { Markdown } from "@/components/docs/Markdown";
 import { OnThisPage } from "@/components/docs/OnThisPage";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd, articleJsonLd } from "@/lib/seo";
 import Link from "next/link";
 
 const tree = buildDocsTree();
@@ -25,8 +27,10 @@ export async function generateMetadata({
   const tp = ch?.topics.find((t) => t.slug === topic);
   if (!ch || !tp) return {};
   return {
-    title: `${tp.title} — ${ch.label} | SpectraLang Docs`,
-    description: `${tp.title} — section of the ${ch.title} reference.`,
+    title: `${tp.title} — ${ch.title} | SpectraLang Language Reference`,
+    description: `${tp.title} — ${ch.description}`,
+    alternates: { canonical: `/docs/${ch.slug}/${tp.slug}` },
+    keywords: [`SpectraLang ${tp.title.toLowerCase()}`, `SpectraLang ${ch.title.toLowerCase()}`],
   };
 }
 
@@ -49,6 +53,21 @@ export default async function TopicPage({
 
   return (
     <div>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Documentation", path: "/docs" },
+          { name: ch.title, path: `/docs/${ch.slug}` },
+          { name: tp.title, path: `/docs/${ch.slug}/${tp.slug}` },
+        ])}
+      />
+      <JsonLd
+        data={articleJsonLd({
+          headline: `${tp.title} — SpectraLang ${ch.title}`,
+          description: ch.description,
+          path: `/docs/${ch.slug}/${tp.slug}`,
+        })}
+      />
       <nav aria-label="Breadcrumb" className="text-[11px] tracking-widest text-muted">
         <Link href="/docs" className="text-purple-bright hover:text-text">
           DOCS

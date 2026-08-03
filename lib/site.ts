@@ -8,6 +8,58 @@ export const site = {
   license: "MIT",
 } as const;
 
+export const stats = [
+  { value: "6", label: "reference chapters" },
+  { value: "62", label: "documented topics" },
+  { value: "10", label: "CLI commands" },
+  { value: "3", label: "OS targets" },
+] as const;
+
+export const faqs = [
+  {
+    q: "What is SpectraLang?",
+    a: "SpectraLang is an open-source, JIT-compiled programming language designed for AI/ML workloads and first-class API services. It makes tensors, reverse-mode autodiff and differentiable regions language-level constructs instead of libraries, and ships an HTTP server/client stack (spectra.api) in its standard library.",
+    href: "/docs/introducao",
+    hrefLabel: "Introduction reference",
+  },
+  {
+    q: "Is SpectraLang open source?",
+    a: "Yes. SpectraLang is 100% open source and released under the MIT License. The full toolchain — compiler, runtime, CLI and LSP — lives in the public Hyska-Software/SpectraLang repository on GitHub.",
+    href: "https://github.com/Hyska-Software/SpectraLang",
+    hrefLabel: "GitHub repository",
+  },
+  {
+    q: "How do I install SpectraLang?",
+    a: "SpectraLang ships prebuilt binaries: a Windows installer (stable), Linux .deb packages and macOS ARM64/x64 binaries (experimental). You can also build the entire toolchain from source with cargo in four commands. See the install page for platform assets and build steps.",
+    href: "/docs/install",
+    hrefLabel: "Installation guide",
+  },
+  {
+    q: "How is SpectraLang different from Python for machine learning?",
+    a: "Unlike Python, where tensors and autodiff are imported libraries, SpectraLang implements them as language-level constructs: typed tensors (Tensor<T, R>) with shape and dtype constraints, reverse-mode autodiff, SSA-based IR with JIT execution, and ONNX import/export for interop. The language reference documents the tensor and ML framework layers in detail.",
+    href: "/docs/stdlib",
+    hrefLabel: "Standard library reference",
+  },
+  {
+    q: "Can I build web APIs with SpectraLang?",
+    a: "Yes. The spectra.api package provides a first-class HTTP/1.1 server and client, routing, middleware, JSON and typed Request/Response primitives, backed by a platform-aware async reactor (epoll / IOCP / kqueue). Database drivers for PostgreSQL, SQLite and Redis are in development.",
+    href: "/docs/introducao",
+    hrefLabel: "API platform docs",
+  },
+  {
+    q: "Which platforms does SpectraLang support?",
+    a: "Windows is the stable target, with Linux (.deb and tarballs) and macOS (ARM64 and x64) builds available as experimental. The CLI works uniformly across all three: compile, run, check, lint, bench, fmt, repl, new, package and release-info.",
+    href: "/docs/cli",
+    hrefLabel: "CLI reference",
+  },
+  {
+    q: "What can I build with the standard library?",
+    a: "The standard library covers std.io, std.string, std.math, std.convert, std.collections, std.tensor, std.ml, std.time and more. The ML framework layer includes layers, losses, optimizers, datasets and dataloaders, plus experiment tracking and distributed-training foundations.",
+    href: "/docs/stdlib",
+    hrefLabel: "Stdlib reference",
+  },
+] as const;
+
 export const nav = [
   { label: "Features", href: "/#features" },
   { label: "Code", href: "/#code" },

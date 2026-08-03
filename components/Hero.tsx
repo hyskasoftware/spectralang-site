@@ -1,4 +1,4 @@
-import { site } from "@/lib/site";
+import { site, stats } from "@/lib/site";
 import { AsciiBanner } from "@/components/ascii/banner";
 import Link from "next/link";
 
@@ -25,8 +25,10 @@ export function Hero() {
             {site.tagline}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            Tensors, autodiff and differentiable regions are language-level constructs, not
-            libraries — JIT-powered, from tensor graphs to production APIs.
+            SpectraLang is an open-source, JIT-compiled programming language for
+            AI/ML workloads and API services. Tensors, autodiff and differentiable
+            regions are language-level constructs, not libraries — from tensor
+            graphs to production APIs, all in one toolchain.
           </p>
           <p className="mt-3 text-[11px] tracking-widest text-muted">
             [ TENSOR-FIRST AI/ML CORE ] [ FIRST-CLASS API SERVICES ] [ JIT EXECUTION ]
@@ -47,6 +49,17 @@ export function Hero() {
             &gt; READ THE DOCS
           </Link>
         </div>
+
+        <dl className="grid w-full max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="ascii-box flex flex-col-reverse bg-bg-soft px-4 py-3">
+              <dt className="text-[10px] tracking-[0.25em] text-muted">{s.label}</dt>
+              <dd className="text-xl font-black tracking-widest text-purple-bright glow-purple-soft">
+                {s.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
 
         <p className="text-[11px] tracking-widest text-muted">
           [ active development — not yet a stable production language ]

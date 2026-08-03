@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "License — MIT — SpectraLang",
-  description: "SpectraLang is released under the MIT License.",
+  title: "MIT License — SpectraLang",
+  description: "SpectraLang is released under the MIT License — free to use, modify and distribute.",
+  alternates: { canonical: "/license" },
 };
 
 export default function LicensePage() {
   return (
     <section className="border-b-2 border-border-strong">
       <div className="mx-auto max-w-4xl px-4 py-16">
+        <JsonLd
+          data={breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "MIT License", path: "/license" },
+          ])}
+        />
         <nav aria-label="Breadcrumb" className="text-[10px] tracking-widest text-muted">
           <Link href="/" className="text-purple-bright hover:text-text">
             HOME

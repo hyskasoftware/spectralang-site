@@ -1,24 +1,42 @@
 import type { Metadata } from "next";
 import { buildDocsTree } from "@/lib/docs-tree";
 import { site } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import Link from "next/link";
 
 const tree = buildDocsTree();
 
 export const metadata: Metadata = {
-  title: "SpectraLang Docs — Language Reference, CLI, Installation, Usage",
+  title: "SpectraLang Documentation — Language Reference, CLI, Installation",
   description:
-    "Complete SpectraLang documentation: language reference, CLI reference, installation and usage.",
+    "Complete SpectraLang documentation: 6-chapter language reference with 62 topics, CLI reference, installation guide and quick start.",
+  alternates: { canonical: "/docs" },
+  keywords: [
+    "SpectraLang docs",
+    "SpectraLang reference",
+    "SpectraLang CLI",
+    "SpectraLang install",
+    "SpectraLang tutorial",
+    "SpectraLang stdlib",
+  ],
   openGraph: {
     title: "SpectraLang Docs",
     description:
       "Complete SpectraLang documentation: language reference, CLI reference, installation and usage.",
+    url: "https://spectralang.org/docs",
   },
 };
 
 export default function DocsPage() {
   return (
     <div>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Documentation", path: "/docs" },
+        ])}
+      />
       <p className="text-[11px] tracking-[0.35em] text-muted">
         {"// DOCUMENTATION — FROM THE REPOSITORY, BUILT LOCALLY"}
       </p>
